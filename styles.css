@@ -1,0 +1,564 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fefae0;
+    padding: 3px 20px; /* Reduced padding for a thinner navbar */
+    font-family: Arial, sans-serif;
+    height: 100px; /* Adjusted height to accommodate the logo */
+}
+
+/* Logo styling */
+.logo-img {
+    height: 100px; /* Retaining the logo size */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Centered nav links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold; /* Make the nav links bolder */
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #6c757d;
+}
+
+/* Donate button styling */
+.donate-btn {
+    background-color:  #ff6f61;
+    color: white;
+    padding: 6px 14px; /* Reduced padding for a sleeker button */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: background-color 0.3s;
+    position: relative; /* Added for positioning the heart icon */
+}
+
+.donate-btn::after {
+    content: '❤️'; /* Adding the heart icon */
+    position: absolute;
+    right: -20px; /* Adjust position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem; /* Adjust size as needed */
+}
+
+.donate-btn:hover {
+    background-color: #e65a50;
+}
+.carousel {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px); /* Adjust as needed */
+    overflow: hidden; /* Ensures only one image is visible */
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ensures container width */
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Each image takes up 100% of the carousel width */
+    height: 100%;
+    width: 100%; /* Ensures image takes up full width */
+    position: relative;
+    overflow: hidden; /* Ensures the image doesn't overflow the container */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: auto    ; /* Ensures the image covers the container while maintaining aspect ratio */
+    display: block;
+    transition: transform 0.5s ease-in-out; /* Adds transition for zoom effect */
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1); /* Zooms in the image on hover */
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 3rem; /* Adjusted font size */
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5); /* Previous background color */
+    padding: 20px 40px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: auto; /* Adjust width to fit content */
+    max-width: 80%; /* Ensure it doesn't exceed the image width */
+    transition: background 0.3s; /* Added transition for background */
+}
+
+.carousel-text:hover {
+    background: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    font-size: 2rem;
+    width: 50px; /* Set width for circular shape */
+    height: 50px; /* Set height for circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Join Us Section Styling */
+.join-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 20px; /* Padding around the section */
+}
+
+/* Left Section: Title, Paragraph, Join Us Button */
+.join-us-left {
+    width: 45%;
+    margin-top: -20px; /* Move the section upwards */
+}
+
+.join-us-left h1 {
+    font-size: 3rem; /* Increased font size */
+    color: #333;
+    margin-bottom: 10px; /* Reduced margin to move it upwards */
+}
+
+.join-us-left p {
+    font-size: 1.4rem; /* Increased font size */
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.join-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 22px; /* Increased padding for a bigger button */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5rem; /* Increased font size */
+    transition: background-color 0.3s;
+}
+
+.join-btn:hover {
+    background-color: #e65a50;
+}
+
+/* Pop-Up Form Styling for Join Us */
+.join-us-form {
+    display: none; /* Hide the form by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form Container Styling */
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ff6f61;
+}
+
+/* Form Heading */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Form Description */
+p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #e65a50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Right Section: Image */
+.join-us-right {
+    width: 45%;
+    margin-top: -20px; /* Move the section upwards */
+}
+
+.join-us-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Pop-Up Form Styling */
+.donate-form {
+    display: none; /* Hide the form by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form Container Styling */
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ff6f61;
+}
+
+/* Form Heading */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Form Description */
+p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #e65a50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Footer Section */
+.footer {
+    background-color: #333; /* Dark background for footer */
+    color: #fff; /* White text */
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-left h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer-middle h4,
+.footer-right h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-middle ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-middle ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.footer-middle ul li a:hover {
+    color: #ff6f61;
+}
+
+.footer-right p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-media a:hover {
+    color: #ff6f61;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* About Us Section Styling */
+.about-us {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-us-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left; /* Align text to the left */
+}
+
+.about-us h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Center align heading */
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 20px; /* Add padding inside the box */
+    border: 1px solid #ccc; /* Add border to create a box */
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+    background-color: #fff; /* Optional: Add background color for the box */
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 40px;
+    text-align: center; /* Center align subheading */
+}
+
+.about-us ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+    color: #555;
+    margin: 20px 0;
+}
+
+.about-us ul li {
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .about-us h1 {
+        font-size: 2rem;
+    }
+
+    .about-us h2 {
+        font-size: 2rem;
+    }
+
+    .about-us p {
+        font-size: 1rem;
+    }
+}

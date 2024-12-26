@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGFAM</title>
+    <link rel="icon" href="/assets/logo/logo3.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="/assets//logo/logo2.png" alt="NGFAM Logo" class="logo-img">
+        </div>
+        <!-- Centered Nav Links -->
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#events">Events</a></li>
+        </ul>
+        <!-- Donate Button -->
+        <button class="donate-btn" onclick="openDonateForm()">Donate Now</button>
+
+<!-- Pop-Up Form (Initially hidden) -->
+<div class="donate-form" id="donateForm">
+    <div class="form-container">
+        <button class="close-btn" onclick="closeDonateForm()">×</button>
+        <h2>Donate to NGFAM</h2>
+        <p>Your donation will help us provide support and resources to families in need. Please fill out the form below to make your contribution.</p>
+        
+        <!-- Donation Form -->
+        <form id="donationForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="amount">Donation Amount ($):</label>
+            <input type="number" id="amount" name="amount" required min="1">
+
+            <button type="submit" class="submit-btn">Donate Now</button>
+        </form>
+    </div>
+</div>
+
+    </nav>
+
+    <!-- Carousel Section -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <div class="carousel-item">
+                <img src="/assets/crousel/image1.jpg" alt="Image 1">
+                <div class="carousel-text">WE ARE HERE TO HELP</div>
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/crousel/image2.png" alt="Image 2">
+                <div class="carousel-text">WE ALL ARE ONE FAMILY </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/crousel/image3.jpg" alt="Image 3">
+                <div class="carousel-text">TOGETHER WE STAND STRONG</div>
+            </div>
+        </div>
+        <!-- Navigation Arrows -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+    
+    
+
+     <!-- Join Us Section -->
+     <div class="join-us">
+        <!-- Left Section: Title, Paragraph, Join Us Button -->
+        <div class="join-us-left">
+            <h1>Join Us for Your Own</h1>
+            <p>We invite you to join us in making a difference. By becoming part of our mission, you help us create a supportive community and empower individuals. Together, we can provide the resources and help needed for a brighter future for everyone.</p>
+           <!-- Join Us Button -->
+<button class="join-btn" onclick="openJoinUsForm()">Join Us</button>
+
+<!-- Pop-Up Form for Joining Us (Initially hidden) -->
+<div class="join-us-form" id="joinUsForm">
+    <div class="form-container">
+        <button class="close-btn" onclick="closeJoinUsForm()">×</button>
+        <h2>Join the NGFAM Community</h2>
+        <p>Become part of a supportive network that empowers individuals and families. By joining us, you help us build stronger communities, provide resources, and promote inclusion. Fill out the form below to get started.</p>
+        
+        <!-- Join Us Form -->
+        <form id="joinForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Why do you want to join?</label>
+            <textarea id="message" name="message" required rows="4" placeholder="Tell us why you'd like to be part of our community."></textarea>
+
+            <button type="submit" class="submit-btn">Join Now</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+        </div>
+
+        <!-- Right Section: Image -->
+        <div class="join-us-right">
+            <img src="/assets/photo-collage.png.png" alt="Join Us Image">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>NGFAM</h3>
+            <p>Empowering families with the support and resources they need to thrive together. Join us and make a difference!</p>
+        </div>
+        <div class="footer-middle">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#events">Events</a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <h4>Contact</h4>
+            <p>Email: info@ngfam.org</p>
+            <p>Phone: +123 456 7890</p>
+            <div class="social-media">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 NGFAM. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
